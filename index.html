@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Carpenter | Premium Woodwork & Furniture</title>
+  <meta name="description" content="Royal Carpenter offers quality carpentry, custom furniture, wardrobes, doors, and woodworking services in Hyderabad. Contact us today.">
+
+  <style>
+    :root {
+      --black: #101010;
+      --dark: #1c1a16;
+      --dark-card: #24221d;
+      --gold: #c9a24a;
+      --gold-light: #ead49a;
+      --ivory: #f7f2e8;
+      --white: #fffdf8;
+      --muted: #c8bdab;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--black);
+      color: var(--ivory);
+      line-height: 1.8;
+    }
+
+    a {
+      transition: all 0.3s ease;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 20px 8%;
+      background: var(--black);
+      color: var(--ivory);
+      border-bottom: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: var(--gold-light);
+      font: bold 25px Georgia, serif;
+      letter-spacing: 2px;
+    }
+    .logo img {
+    display: block;
+    max-height: 50px;
+    max-width: 180px;
+    width: auto;
+    object-fit: contain;
+}
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    nav a {
+      color: var(--ivory);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--gold-light);
+    }
+
+    /* HOME HERO */
+    .hero {
+      min-height: 520px;
+      padding: 100px 8%;
+      display: flex;
+      align-items: center;
+      color: var(--ivory);
+      background:
+        radial-gradient(circle at 85% 20%, #584321 0%, transparent 38%),
+        linear-gradient(120deg, #101010, #201d17, #302516);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      color: var(--gold-light);
+      font: bold clamp(38px, 5vw, 64px)/1.15 Georgia, serif;
+      margin: 18px 0 22px;
+    }
+
+    .hero-description {
+      max-width: 600px;
+      color: #e9e1d0;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    /* BUTTONS */
+    .button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: var(--black);
+      padding: 13px 24px;
+      border: 1px solid var(--gold-light);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px #00000030;
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--gold-light);
+      border-color: var(--gold);
+      margin-left: 10px;
+    }
+
+    .button-outline:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* ALL SECTIONS */
+    section {
+      padding: 75px 8%;
+      background: var(--black);
+      color: var(--ivory);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title h2,
+    .contact h2 {
+      color: var(--gold-light);
+      font: bold clamp(28px, 4vw, 38px) Georgia, serif;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 65px;
+      height: 3px;
+      background: var(--gold);
+      margin: 18px auto 0;
+    }
+
+    /* ABOUT */
+    #about {
+      background: var(--dark);
+    }
+
+    .about {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      font-size: 16px;
+      color: #e4dccd;
+    }
+
+    /* PRODUCTS */
+    #services {
+      background: var(--black);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--dark-card);
+      color: var(--ivory);
+      border: 1px solid #705a30;
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 6px 20px #00000025;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-light);
+      box-shadow: 0 12px 28px #c9a24a20;
+    }
+
+    .symbol {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      color: var(--gold-light);
+      font: bold 21px Georgia, serif;
+      margin: 12px 0;
+    }
+
+    .card p {
+      color: #d0c6b4;
+      font-size: 14px;
+    }
+
+    /* WHY CHOOSE US */
+    .why {
+      background:
+        radial-gradient(circle at 85% 15%, #302516 0%, transparent 38%),
+        var(--black);
+      color: var(--ivory);
+      border-top: 1px solid #705a30;
+      border-bottom: 1px solid #705a30;
+    }
+
+    .why .section-title h2 {
+      color: var(--gold-light);
+    }
+
+    .why .section-title p {
+      color: var(--muted);
+    }
+
+    .why .card {
+      background: var(--dark-card);
+      color: var(--ivory);
+      border: 1px solid #705a30;
+      box-shadow: 0 6px 20px #00000025;
+    }
+
+    .why .card:hover {
+      border-color: var(--gold-light);
+      box-shadow: 0 12px 28px #c9a24a20;
+    }
+
+    .why .card h3 {
+      color: var(--gold-light);
+    }
+
+    .why .card p {
+      color: #ded5c5;
+    }
+
+    /* CUSTOMER REVIEWS */
+    .reviews {
+      background:
+        radial-gradient(circle at 15% 15%, #302516 0%, transparent 38%),
+        var(--dark);
+      color: var(--ivory);
+      border-top: 1px solid #705a30;
+      border-bottom: 1px solid #705a30;
+    }
+
+    .reviews .section-title h2 {
+      color: var(--gold-light);
+    }
+
+    .reviews .section-title p {
+      color: var(--muted);
+    }
+
+    .review-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      align-items: start;
+    }
+
+    .review-info,
+    .review-form {
+      background: var(--dark-card);
+      border: 1px solid #705a30;
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 6px 20px #00000025;
+    }
+
+    .review-info h3,
+    .review-form h3 {
+      color: var(--gold-light);
+      font: bold 23px Georgia, serif;
+      margin-bottom: 12px;
+    }
+
+    .review-info p,
+    .review-form > p {
+      color: #ded5c5;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .review-points {
+      list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
+    }
+
+    .review-points li {
+      margin: 10px 0;
+      color: #e4dccd;
+    }
+
+    .review-points li::before {
+      content: "✓";
+      color: var(--gold-light);
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .review-form label {
+      display: block;
+      color: var(--gold-light);
+      font-size: 14px;
+      font-weight: bold;
+      margin: 14px 0 6px;
+    }
+
+    .review-form input,
+    .review-form select,
+    .review-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #705a30;
+      border-radius: 4px;
+      background: #151410;
+      color: var(--ivory);
+      font: inherit;
+      font-size: 14px;
+    }
+
+    .review-form textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .review-form input:focus,
+    .review-form select:focus,
+    .review-form textarea:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    .review-form .button {
+      margin-top: 18px;
+      width: 100%;
+    }
+
+    .review-note {
+      font-size: 12px !important;
+      color: var(--muted) !important;
+      margin-top: 12px;
+      margin-bottom: 0 !important;
+    }
+
+    /* CONTACT */
+    .contact {
+      background:
+        radial-gradient(circle at top right, #40321e, transparent 40%),
+        var(--black);
+      color: var(--ivory);
+      text-align: center;
+      border-top: 3px solid var(--gold);
+    }
+
+    .contact h2 {
+      color: var(--gold-light);
+    }
+
+    .contact-intro {
+      color: #e4dccd;
+      margin-bottom: 25px;
+    }
+
+    .contact-details {
+      max-width: 650px;
+      margin: 25px auto;
+    }
+
+    .contact-details p {
+      margin: 12px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-details strong {
+      color: var(--gold-light);
+    }
+
+    .contact-details a {
+      color: var(--ivory);
+      text-decoration: none;
+    }
+
+    .contact-details a:hover {
+      color: var(--gold-light);
+    }
+
+    .contact .button {
+      margin-top: 15px;
+    }
+
+    .whatsapp-button {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: var(--black);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #080808;
+      color: var(--gold-light);
+      text-align: center;
+      padding: 24px 8%;
+      border-top: 1px solid #8c6a29;
+      font-size: 13px;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 650px) {
+      header {
+        padding: 18px 5%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .hero {
+        min-height: 440px;
+        padding: 65px 6%;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 52px 6%;
+      }
+
+      .button {
+        padding: 12px 17px;
+      }
+
+      .button-outline {
+        margin: 12px 0 0;
+      }
+
+      .card {
+        padding: 23px;
+      }
+
+      .review-info,
+      .review-form {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+<div class="logo" id="businessLogo">
+    <img
+        src="./Royal Carpenter Monogram Logo.png"
+        alt="ROYAL CARPENTER Logo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+    >
+    <span style="display:none; color:#ead49a;">ROYAL CARPENTER</span>
+</div>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Products</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">CRAFTSMANSHIP • QUALITY • TRUST</p>
+
+        <h1 id="heroTitle">Your Trusted Carpentry Partner</h1>
+
+        <p class="hero-description" id="heroDescription">
+          Beautiful woodworking, quality craftsmanship and
+          custom furniture made to suit your home and lifestyle.
+        </p>
+
+        <a class="button" href="#services">Explore Our Services</a>
+        <a class="button button-outline" href="#contact">Contact Us</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">
+        <h2>About Royal Carpenter</h2>
+        <p>Crafted with care. Built to last.</p>
+      </div>
+
+      <div class="about">
+        <p id="aboutText">
+          Royal Carpenter is dedicated to delivering quality
+          woodworking and carpentry services. From custom
+          furniture to practical home solutions, we focus on
+          craftsmanship, attention to detail and customer
+          satisfaction. Our aim is to turn your ideas into
+          beautiful and functional wooden creations.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRODUCTS AND SERVICES -->
+    <section id="services">
+      <div class="section-title">
+        <h2>Our Products & Services</h2>
+        <p>Quality woodwork designed around your needs.</p>
+      </div>
+
+      <div class="grid" id="productGrid">
+
+        <article class="card">
+          <div class="symbol">🪑</div>
+          <h3>Custom Furniture</h3>
+          <p>Furniture designed to suit your space, style and everyday requirements.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">🚪</div>
+          <h3>Wooden Doors</h3>
+          <p>Stylish wooden door solutions that add character and elegance to your home.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">🛌</div>
+          <h3>Carpentry Work</h3>
+          <p>Carpentry and woodworking services with attention to finishing and detail.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">🗄️</div>
+          <h3>Wardrobes & Cabinets</h3>
+          <p>Storage solutions designed to help organise your home beautifully.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">🏠</div>
+          <h3>Home Woodwork</h3>
+          <p>Wooden fixtures and custom projects tailored to your home.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">🎨</div>
+          <h3>Custom Designs</h3>
+          <p>Share your requirements and discuss a woodworking solution made for you.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why" id="why">
+      <div class="section-title">
+        <h2>Why Choose Royal Carpenter?</h2>
+        <p>Our focus is on quality and customer satisfaction.</p>
+      </div>
+
+      <div class="grid">
+
+        <article class="card">
+          <div class="symbol">🏆</div>
+          <h3>Quality First</h3>
+          <p>We aim for careful workmanship and quality finishing.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">🤝</div>
+          <h3>Customer Focus</h3>
+          <p>We listen to your needs and discuss suitable solutions.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">💎</div>
+          <h3>Elegant Designs</h3>
+          <p>We help bring your ideas to life with practical and attractive woodwork.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section class="reviews" id="reviews">
+      <div class="section-title">
+        <h2>Customer Reviews</h2>
+        <p>Your feedback helps Royal Carpenter serve you better.</p>
+      </div>
+
+      <div class="review-layout">
+
+        <div class="review-info">
+          <h3>Your Experience Matters</h3>
+
+          <p>
+            Have you worked with Royal Carpenter? Tell us about your experience
+            with our carpentry, furniture, finishing or customer service.
+          </p>
+
+          <ul class="review-points">
+            <li>Share honest feedback about your project</li>
+            <li>Tell us what went well or what we can improve</li>
+            <li>Help other customers understand our service</li>
+          </ul>
+
+          <p class="review-note">
+            Your review will be sent to us through WhatsApp. It will not appear
+            publicly on this website automatically.
+          </p>
+        </div>
+
+        <form class="review-form" id="reviewForm">
+          <h3>Write a Review</h3>
+          <p>Fill in the details below to send your feedback.</p>
+
+          <label for="reviewName">Your name</label>
+          <input
+            id="reviewName"
+            name="reviewName"
+            type="text"
+            placeholder="Enter your name"
+            required
+            maxlength="80"
+          >
+
+          <label for="reviewRating">Your rating</label>
+          <select id="reviewRating" name="reviewRating" required>
+            <option value="">Choose a rating</option>
+            <option value="5 out of 5">★★★★★ — Excellent (5/5)</option>
+            <option value="4 out of 5">★★★★☆ — Very good (4/5)</option>
+            <option value="3 out of 5">★★★☆☆ — Good (3/5)</option>
+            <option value="2 out of 5">★★☆☆☆ — Needs improvement (2/5)</option>
+            <option value="1 out of 5">★☆☆☆☆ — Poor (1/5)</option>
+          </select>
+
+          <label for="reviewMessage">Your review</label>
+          <textarea
+            id="reviewMessage"
+            name="reviewMessage"
+            placeholder="Tell us about your experience..."
+            required
+            maxlength="1200"
+          ></textarea>
+
+          <button class="button" type="submit">
+            Send Review on WhatsApp
+          </button>
+
+          <p class="review-note">
+            WhatsApp will open with your review ready to send.
+            Please check the message and press Send.
+          </p>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="section-title">
+        <h2>Let's Build Something Beautiful</h2>
+      </div>
+
+      <p class="contact-intro">
+        Have a furniture idea or carpentry project?
+        Get in touch with Royal Carpenter.
+      </p>
+
+      <div class="contact-details">
+        <p>
+          <strong>Phone:</strong>
+          <a id="phoneLink" href="tel:+918639666154">
+            <span id="phoneText">+91 8639666154</span>
+          </a>
+        </p>
+
+        <p>
+          <strong>Address:</strong>
+          <span id="addressText">Shastripuram, King Colony, Hyderabad, Telangana, India</span>
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <a id="emailLink" href="mailto:faizuddin8898@gmail.com">
+            <span id="emailText">faizuddin8898@gmail.com</span>
+          </a>
+        </p>
+      </div>
+
+      <a
+        class="button whatsapp-button"
+        id="whatsappButton"
+        href="https://wa.me/919652347976"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Chat on WhatsApp
+      </a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      &copy; <span id="year"></span>
+      <span id="footerName">ROYAL CARPENTER</span>.
+      All rights reserved.
+    </p>
+  </footer>
+
+  <!-- BUSINESS DETAILS AND WHATSAPP FUNCTIONALITY -->
+  <script>
+    const business = {
+      name: "ROYAL CARPENTER",
+      headline: "Your Trusted Carpentry Partner",
+      description:
+        "Beautiful woodworking, quality craftsmanship and custom furniture made to suit your home and lifestyle.",
+      about:
+        "Royal Carpenter is dedicated to delivering quality woodworking and carpentry services. From custom furniture to practical home solutions, we focus on craftsmanship, attention to detail and customer satisfaction.",
+      phone: "+91 8639666154",
+      whatsapp: "+91 9652347976",
+      email: "faizuddin8898@gmail.com",
+      address: "Shastripuram, King Colony, Hyderabad, Telangana, India"
+    };
+    document.getElementById("businessLogo").textContent = business.name;
+    document.getElementById("footerName").textContent = business.name;
+    document.getElementById("heroTitle").textContent = business.headline;
+    document.getElementById("heroDescription").textContent = business.description;
+    document.getElementById("aboutText").textContent = business.about;
+
+    document.getElementById("phoneText").textContent = business.phone;
+
+    document.getElementById("phoneLink").href =
+      "tel:" + business.phone.replace(/[^\d+]/g, "");
+
+    document.getElementById("emailText").textContent = business.email;
+    document.getElementById("emailLink").href = "mailto:" + business.email;
+
+    document.getElementById("addressText").textContent = business.address;
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const whatsappNumber = business.whatsapp.replace(/\D/g, "");
+
+    // Main WhatsApp contact button
+    document.getElementById("whatsappButton").href =
+      "https://wa.me/" + whatsappNumber +
+      "?text=" +
+      encodeURIComponent(
+        "Hello Royal Carpenter! I would like to enquire about your carpentry services."
+      );
+
+    // CUSTOMER REVIEW FORM
+    document.getElementById("reviewForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const customerName =
+        document.getElementById("reviewName").value.trim();
+
+      const customerRating =
+        document.getElementById("reviewRating").value;
+
+      const customerReview =
+        document.getElementById("reviewMessage").value.trim();
+
+      if (!customerName || !customerRating || !customerReview) {
+        alert("Please complete all review fields.");
+        return;
+      }
+
+      const reviewText =
+        "Hello Royal Carpenter! I would like to share my customer review.\n\n" +
+        "Name: " + customerName + "\n" +
+        "Rating: " + customerRating + "\n" +
+        "Review: " + customerReview;
+
+      const reviewUrl =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(reviewText);
+
+      window.open(reviewUrl, "_blank", "noopener,noreferrer");
+    });
+  </script>
+
+</body>
+</html>
